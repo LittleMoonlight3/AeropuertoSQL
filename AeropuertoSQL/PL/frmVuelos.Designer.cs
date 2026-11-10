@@ -36,6 +36,7 @@
             this.txtestado = new System.Windows.Forms.TextBox();
             this.txtdestino = new System.Windows.Forms.TextBox();
             this.dtpfechasalida = new System.Windows.Forms.DateTimePicker();
+            this.btnClose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,6 +55,7 @@
             this.btnEliminar.TabIndex = 8;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnModificar
             // 
@@ -105,11 +107,22 @@
             this.dtpfechasalida.Size = new System.Drawing.Size(200, 20);
             this.dtpfechasalida.TabIndex = 13;
             // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(676, 356);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.TabIndex = 14;
+            this.btnClose.Text = "Salir";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // frmVuelos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.dtpfechasalida);
             this.Controls.Add(this.txtdestino);
             this.Controls.Add(this.txtestado);
@@ -137,5 +150,6 @@
         private System.Windows.Forms.TextBox txtestado;
         private System.Windows.Forms.TextBox txtdestino;
         private System.Windows.Forms.DateTimePicker dtpfechasalida;
+        private System.Windows.Forms.Button btnClose;
     }
 }

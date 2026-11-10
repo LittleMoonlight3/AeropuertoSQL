@@ -65,5 +65,19 @@ namespace AeropuertoSQL.PL
             MessageBox.Show("Vuelo modificado correctamente");
             dataGridView1.DataSource = vuelos.ObtenerTodosLosVuelos();
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            DialogResult result=MessageBox.Show("¿Desea cerrar la ventana?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
     }
 }
