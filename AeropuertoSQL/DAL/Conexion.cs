@@ -20,7 +20,7 @@ namespace AeropuertoSQL.CLL
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error de conexin" + ex.Message);
+                MessageBox.Show("Error de conexion" + ex.Message);
             }
             return cn;
         }
