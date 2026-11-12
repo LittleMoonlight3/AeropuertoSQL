@@ -94,9 +94,9 @@ namespace AeropuertoSQL.PL
         {
            using(SqlConnection conexion = new Conexion().conectar())
             {
-                string query = "SELECT * FROM Vuelos WHERE idVuelo LIKE @idVuelo";
+                string query = "SELECT * FROM Vuelos WHERE idAvion LIKE @idAvion";
                 SqlDataAdapter adapter = new SqlDataAdapter(query, conexion);
-                adapter.SelectCommand.Parameters.AddWithValue("@idVuelo", "%" + txtBusqueda.Text + "%");
+                adapter.SelectCommand.Parameters.AddWithValue("@idAvion", "%" + txtBusqueda.Text + "%");
                 DataTable dataTable = new DataTable();
                 adapter.Fill(dataTable);
                 dataGridView1.DataSource = dataTable;
