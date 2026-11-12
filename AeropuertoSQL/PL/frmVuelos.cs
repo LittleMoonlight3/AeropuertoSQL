@@ -79,5 +79,28 @@ namespace AeropuertoSQL.PL
                 this.Close();
             }
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtBusqueda_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        public void txtBusqueda_KeyDown(object sender, KeyEventArgs e)
+        {
+           using(SqlConnection conexion = new Conexion().conectar())
+            {
+                string query = "SELECT * FROM Vuelos WHERE idVuelo LIKE @idVuelo";
+                SqlDataAdapter adapter = new SqlDataAdapter(query, conexion);
+                adapter.SelectCommand.Parameters.AddWithValue("@idVuelo", "%" + txtBusqueda.Text + "%");
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable);
+                dataGridView1.DataSource = dataTable;
+            }
+        }
     }
 }

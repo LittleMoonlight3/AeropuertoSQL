@@ -10,7 +10,7 @@ namespace AeropuertoSQL.CLL
 {
     class Conexion
     {
-        string cadena = "Server=localhost;Database=Aeropuerto;Integrated Security=true";
+        string cadena = @"Server=localhost\SQLEXPRESS;Database=Aeropuerto;Integrated Security=true";
         public SqlConnection conectar()
         {
             SqlConnection cn = new SqlConnection(cadena);
