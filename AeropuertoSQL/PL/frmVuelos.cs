@@ -66,10 +66,38 @@ namespace AeropuertoSQL.PL
             dataGridView1.DataSource = vuelos.ObtenerTodosLosVuelos();
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+       
+            private void btnEliminar_Click(object sender, EventArgs e)
         {
+            if (idVueloSeleccionado == 0)
+            {
+                MessageBox.Show("Por favor, selecciona un vuelo de la tabla primero.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            DialogResult confirmacion = MessageBox.Show(
+                "¿Estás seguro de que deseas eliminar este vuelo?",
+                "Confirmar eliminación",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (confirmacion == DialogResult.Yes)
+            {
+                Vuelos vuelos = new Vuelos();
+                vuelos.EliminarVuelo(idVueloSeleccionado);
+
+                MessageBox.Show("Vuelo eliminado correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                dataGridView1.DataSource = vuelos.ObtenerTodosLosVuelos();
+                idVueloSeleccionado = 0;
+                txtidAvion.Clear();
+                txtdestino.Clear();
+                txtestado.Clear();
+                dtpfechasalida.Value = DateTime.Now;
+            }
         }
+        
 
         private void btnClose_Click(object sender, EventArgs e)
         {
