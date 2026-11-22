@@ -20,6 +20,7 @@ namespace AeropuertoSQL
         public GokuLoader()
         {
             Text = "Cargando";
+            AccessibleName = "Logotipo animado de Goku Ultra Instinto";
             FormBorderStyle = FormBorderStyle.None;
             WindowState = FormWindowState.Maximized;
             StartPosition = FormStartPosition.CenterScreen;
@@ -33,7 +34,8 @@ namespace AeropuertoSQL
                 throw new InvalidOperationException("No se encontró el recurso del logotipo de Goku.");
 
             using (stream)
-                logo = Image.FromStream(stream);
+            using (Image loaded = Image.FromStream(stream))
+                logo = new Bitmap(loaded);
 
             pauseButton = MakeButton("Pausar", "Pausar o reanudar la animación");
             replayButton = MakeButton("Repetir", "Reiniciar la animación");
@@ -123,9 +125,7 @@ namespace AeropuertoSQL
                 width, height);
 
             if (elapsed < 3100)
-            {
                 DrawConstructingOutline(g, target, elapsed / 2650f);
-            }
             else
             {
                 float opacity;
