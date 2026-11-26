@@ -59,5 +59,15 @@ namespace AeropuertoSQL
                 command.ExecuteNonQuery();
             }
         }
+        public void EliminarVuelo(int idVuelo)
+        {
+            using (SqlConnection conexion = new Conexion().conectar())
+            {
+                string query = "DELETE FROM Vuelos WHERE idVuelo = @idVuelo";
+                SqlCommand cmd = new SqlCommand(query, conexion);
+                cmd.Parameters.AddWithValue("@idVuelo", idVuelo);
+                cmd.ExecuteNonQuery();
+            }
+        }
     }
 }

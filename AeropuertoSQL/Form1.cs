@@ -23,5 +23,11 @@ namespace AeropuertoSQL
             frmVuelos ventanaVuelos = new frmVuelos();
             ventanaVuelos.Show();
         }
+
+        private void btnDatosVuelos_Click(object sender, EventArgs e)
+        {
+            frmDatosVuelos ventanaDatosVuelos = new frmDatosVuelos();
+            ventanaDatosVuelos.Show();
+        }
     }
 }

@@ -34,9 +34,10 @@
             // 
             // btnVuelos
             // 
-            this.btnVuelos.Location = new System.Drawing.Point(337, 135);
+            this.btnVuelos.Location = new System.Drawing.Point(490, 208);
+            this.btnVuelos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnVuelos.Name = "btnVuelos";
-            this.btnVuelos.Size = new System.Drawing.Size(120, 107);
+            this.btnVuelos.Size = new System.Drawing.Size(180, 165);
             this.btnVuelos.TabIndex = 0;
             this.btnVuelos.Text = "Vuelos";
             this.btnVuelos.UseVisualStyleBackColor = true;
@@ -44,20 +45,23 @@
             // 
             // btnDatosVuelos
             // 
-            this.btnDatosVuelos.Location = new System.Drawing.Point(452, 135);
+            this.btnDatosVuelos.Location = new System.Drawing.Point(678, 208);
+            this.btnDatosVuelos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnDatosVuelos.Name = "btnDatosVuelos";
-            this.btnDatosVuelos.Size = new System.Drawing.Size(112, 107);
+            this.btnDatosVuelos.Size = new System.Drawing.Size(168, 165);
             this.btnDatosVuelos.TabIndex = 1;
             this.btnDatosVuelos.Text = "Datos de los Vuelos";
             this.btnDatosVuelos.UseVisualStyleBackColor = true;
+            this.btnDatosVuelos.Click += new System.EventHandler(this.btnDatosVuelos_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1267, 705);
+            this.ClientSize = new System.Drawing.Size(1900, 1050);
             this.Controls.Add(this.btnDatosVuelos);
             this.Controls.Add(this.btnVuelos);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
