@@ -40,12 +40,13 @@ namespace AeropuertoSQL
                 command.ExecuteNonQuery();
             }
         }
-        public void ModificarDatosVuelo(string modelo_avion, int capacidad, string estadoOperativo)
+        public void ModificarDatosVuelo(int idAvion, string modelo_avion, int capacidad, string estadoOperativo)
         {
             using (SqlConnection conexion = con.conectar())
             {
                 string query = "UPDATE Aviones SET modelo_avion = @modelo_avion, capacidad = @capacidad, estadoOperativo = @estadoOperativo WHERE idAvion = @idAvion";
                 SqlCommand command = new SqlCommand(query, conexion);
+                command.Parameters.AddWithValue("@idAvion", idAvion);
                 command.Parameters.AddWithValue("@modelo_avion", modelo_avion);
                 command.Parameters.AddWithValue("@capacidad", capacidad);
                 command.Parameters.AddWithValue("@estadoOperativo", estadoOperativo);

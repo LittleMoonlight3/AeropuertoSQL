@@ -62,7 +62,7 @@ namespace AeropuertoSQL.PL
             string modelo_avion = txtmodelo.Text;
             int capacidad = Convert.ToInt32(txtcapacidad.Text);
             string estadoOperativo = txtestado.Text;
-            datosVuelos.ModificarDatosVuelo(modelo_avion, capacidad, estadoOperativo);
+            datosVuelos.ModificarDatosVuelo(idAvionSeleccionado, modelo_avion, capacidad, estadoOperativo);
             MessageBox.Show("Datos modificados correctamente");
             dataGridView2.DataSource = datosVuelos.ObtenerTodosLosDatosVuelos();
         }
@@ -104,6 +104,11 @@ namespace AeropuertoSQL.PL
             {
                 this.Close();
             }
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
