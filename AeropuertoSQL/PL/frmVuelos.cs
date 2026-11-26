@@ -66,7 +66,8 @@ namespace AeropuertoSQL.PL
             dataGridView1.DataSource = vuelos.ObtenerTodosLosVuelos();
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+       
+            private void btnEliminar_Click(object sender, EventArgs e)
         {
             if (idVueloSeleccionado == 0)
             {
@@ -96,6 +97,7 @@ namespace AeropuertoSQL.PL
                 dtpfechasalida.Value = DateTime.Now;
             }
         }
+        
 
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -103,6 +105,29 @@ namespace AeropuertoSQL.PL
             if (result == DialogResult.Yes)
             {
                 this.Close();
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtBusqueda_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        public void txtBusqueda_KeyDown(object sender, KeyEventArgs e)
+        {
+           using(SqlConnection conexion = new Conexion().conectar())
+            {
+                string query = "SELECT * FROM Vuelos WHERE idAvion LIKE @idAvion";
+                SqlDataAdapter adapter = new SqlDataAdapter(query, conexion);
+                adapter.SelectCommand.Parameters.AddWithValue("@idAvion", "%" + txtBusqueda.Text + "%");
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable);
+                dataGridView1.DataSource = dataTable;
             }
         }
     }

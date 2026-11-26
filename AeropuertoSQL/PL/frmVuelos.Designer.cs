@@ -37,6 +37,7 @@
             this.txtdestino = new System.Windows.Forms.TextBox();
             this.dtpfechasalida = new System.Windows.Forms.DateTimePicker();
             this.btnClose = new System.Windows.Forms.Button();
+            this.txtBusqueda = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,6 +76,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(728, 184);
             this.dataGridView1.TabIndex = 6;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btnAgregar
             // 
@@ -117,11 +119,21 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // txtBusqueda
+            // 
+            this.txtBusqueda.Location = new System.Drawing.Point(365, 130);
+            this.txtBusqueda.Name = "txtBusqueda";
+            this.txtBusqueda.Size = new System.Drawing.Size(100, 20);
+            this.txtBusqueda.TabIndex = 15;
+            this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
+            this.txtBusqueda.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBusqueda_KeyDown);
+            // 
             // frmVuelos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtBusqueda);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.dtpfechasalida);
             this.Controls.Add(this.txtdestino);
@@ -151,5 +163,6 @@
         private System.Windows.Forms.TextBox txtdestino;
         private System.Windows.Forms.DateTimePicker dtpfechasalida;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.TextBox txtBusqueda;
     }
 }
