@@ -122,7 +122,7 @@ namespace AeropuertoSQL.PL
         {
            using(SqlConnection conexion = new Conexion().conectar())
             {
-                string query = "SELECT * FROM Vuelos WHERE idAvion LIKE @idAvion";
+                string query = @"SELECT * FROM Vuelos WHERE idAvion LIKE @idAvion";
                 SqlDataAdapter adapter = new SqlDataAdapter(query, conexion);
                 adapter.SelectCommand.Parameters.AddWithValue("@idAvion", "%" + txtBusqueda.Text + "%");
                 DataTable dataTable = new DataTable();
